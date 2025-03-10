@@ -37,8 +37,8 @@ export default function  Page() {
       {/* Step 1: Input weight and height */}
       <Card className="max-w-md mx-auto p-6 bg-gray-800 rounded-2xl shadow-lg">
         <CardContent>
-          <h2 className="text-2xl font-semibold mb-4">Step 1: Enter Your Details</h2>
-          <div className="flex flex-col gap-4">
+          <h2 className="text-2xl text-black font-semibold mb-4">Step 1: Enter Your Details</h2>
+          <div className="flex flex-col gap-4 text-black">
             <Input
               type="number"
               placeholder="Enter Weight (kg)"
@@ -58,7 +58,7 @@ export default function  Page() {
       {/* Step 2: Click to calculate BMI */}
       <Card className="max-w-md mx-auto mt-6 p-6 bg-gray-800 rounded-2xl shadow-lg">
         <CardContent>
-          <h2 className="text-2xl font-semibold mb-4">Step 2: Calculate Your BMI</h2>
+          <h2 className="text-2xl text-black font-semibold mb-4">Step 2: Calculate Your BMI</h2>
           <Button onClick={calculateBMI} className="bg-blue-500 hover:bg-blue-600 w-full">
             Calculate BMI
           </Button>
@@ -69,9 +69,9 @@ export default function  Page() {
       {bmi && (
         <Card className="max-w-md mx-auto mt-6 p-6 bg-gray-800 rounded-2xl shadow-lg">
           <CardContent>
-            <h2 className="text-2xl font-semibold mb-4">Step 3: View Your Results</h2>
+            <h2 className="text-2xl text-black font-semibold mb-4">Step 3: View Your Results</h2>
             <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} className="text-center">
-              <p className="text-lg font-semibold">Your BMI: {bmi}</p>
+              <p className="text-lg text-black font-semibold">Your BMI: {bmi}</p>
               <p className="text-sm text-gray-400">Category: {category}</p>
             </motion.div>
           </CardContent>
