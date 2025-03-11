@@ -1,3 +1,5 @@
+"use client";
+
 import { useState } from "react";
 import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
@@ -15,6 +17,7 @@ export default function Page() {
   const [category, setCategory] = useState("");
   const [recommendation, setRecommendation] = useState("");
 
+  // BMI Calculation Function
   const calculateBMI = async () => {
     const heightInMeters = height / 100;
     const bmiValue = (weight / (heightInMeters * heightInMeters)).toFixed(1);
@@ -31,6 +34,7 @@ export default function Page() {
     generateRecommendation(bmiValue, goal);
   };
 
+  // Basic Recommendations (Non-AI)
   const generateRecommendation = (bmiValue, goal) => {
     let rec = "";
     if (bmiValue < 18.5) {
@@ -99,6 +103,7 @@ export default function Page() {
 
       <div className="border-t border-gray-700 my-12"></div>
 
+      {/* Workout Plans */}
       <section className="text-center">
         <h2 className="text-3xl font-bold">🏋️ Workout Plans</h2>
         <p className="text-gray-200 mt-2">Choose from expertly designed fitness programs.</p>
@@ -117,6 +122,7 @@ export default function Page() {
 
       <div className="border-t border-gray-700 my-12"></div>
 
+      {/* Trainers Section */}
       <section className="text-center">
         <h2 className="text-3xl font-semibold">👩‍🏫 Meet Our Trainers</h2>
         <p className="text-gray-400 mt-2">Certified professionals to guide your journey.</p>
@@ -134,6 +140,7 @@ export default function Page() {
 
       <div className="border-t border-gray-700 my-12"></div>
 
+      {/* Testimonials Section */}
       <section className="text-center">
         <h2 className="text-3xl font-semibold">💬 Client Testimonials</h2>
         <p className="text-gray-200 mt-2">Hear success stories from our happy clients.</p>
