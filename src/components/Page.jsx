@@ -6,6 +6,7 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { motion } from "framer-motion";
 import AIAdvice from "./AIAdvice";
+import manIcon from "@/assets/manicon.png";
 
 export default function Page() {
   const [weight, setWeight] = useState(70);
@@ -122,14 +123,15 @@ export default function Page() {
 
       <div className="border-t border-gray-700 my-12"></div>
 
-      {/* Trainers Section */}
+        {/* Trainers Section */}
       <section className="text-center">
         <h2 className="text-3xl font-semibold">👩‍🏫 Meet Our Trainers</h2>
         <p className="text-gray-400 mt-2">Certified professionals to guide your journey.</p>
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mt-6 text-black">
-          {['Alex', 'Jordan', 'Taylor'].map((trainer, index) => (
+          {["Alex", "Jordan", "Taylor"].map((trainer, index) => (
             <Card key={index} className="p-4 bg-gray-800/60 rounded-xl">
-              <CardContent>
+              <CardContent className="flex flex-col items-center">
+                <img src={manIcon} alt="Trainer Icon" className="w-16 h-16 rounded-full mb-3" />
                 <h3 className="text-xl font-semibold">{trainer}</h3>
                 <p className="text-gray-800 mt-2">Expert in personal training & nutrition.</p>
               </CardContent>
@@ -145,10 +147,15 @@ export default function Page() {
         <h2 className="text-3xl font-semibold">💬 Client Testimonials</h2>
         <p className="text-gray-200 mt-2">Hear success stories from our happy clients.</p>
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mt-6">
-          {['"Lost 10kg in 3 months!"', '"My energy levels are at an all-time high!"'].map((testimonial, index) => (
+          {[
+            { text: '"Lost 10kg in 3 months! Best fitness program I have ever tried."', name: "John Doe" },
+            { text: '"My energy levels are at an all-time high!The trainers are super motivating."', name: "Emily Smith" },
+          ].map((testimonial, index) => (
             <Card key={index} className="p-4 bg-gray-800/60 rounded-xl">
-              <CardContent>
-                <p className="italic text-gray-600">{testimonial}</p>
+              <CardContent className="flex flex-col items-center">
+                <img src={manIcon} alt="Client Icon" className="w-16 h-16 rounded-full mb-3" />
+                <p className="italic text-gray-600">{testimonial.text}</p>
+                <p className="font-semibold text-black mt-2">— {testimonial.name}</p>
               </CardContent>
             </Card>
           ))}
